@@ -1,4 +1,41 @@
-function cinco(p, n) {
+function matrixElementsSum(matrix) {
+    var sum = 0;
+    for (var i = 0; i < 3; i++) {
+        for (var j = 0; j < 3; j++) {
+            if (matrix[i][j] != 0) {
+                if (i == 0)
+                    sum += matrix[i][j];
+                else {
+                    if (matrix[i - 1][j] != 0)
+                        sum += matrix[i][j]
+                }
+            }
+        }
+    }
+    return sum;
+}
+// console.log(matrixElementsSum([
+//     [1, 1, 1, 0],
+//     [0, 5, 0, 1],
+//     [2, 1, 3, 10]
+// ]));
+
+
+
+function CenturyFromYear(year) {
+    var sig = year.slice(0, 2);
+    var siglo = parseInt(sig) + 1;
+    return siglo;
+}
+// console.log(CenturyFromYear("1905"));
+
+
+function isTandemRepeat() {
+
+}
+
+
+function exerciseElaboration(p, n) {
     n += 1;
     var sum = p;
     while (n-- != 0) {
@@ -14,65 +51,4 @@ function cinco(p, n) {
     return p;
 }
 
-
-
-var con = 0;
-
-function tres(cad) {
-    let res = '';
-    while (con < cad.length) {
-        let c = cad.charAt(con);
-        if (c == '(') {
-            con++;
-            res += add(cad);
-        } else {
-            res += c;
-        }
-        con++;
-    }
-    return res;
-}
-const add = (cad) => {
-    //console.log("cadena recursiva "+cad);
-    let res = '';
-    while (con < cad.length) {
-        let c = cad.charAt(con);
-        if (c == '(') {
-            con++;
-            res += add(cad);
-        } else if (c == ')') {
-            res = volteo(res);
-            return res;
-        } else {
-            res += c;
-        }
-        con++;
-    }
-    return res;
-
-}
-
-function volteo(cad) {
-    let sum = '';
-    for (let i = cad.length - 1; i >= 0; i--) {
-        let c = cad.charAt(i);
-        sum += c;
-    }
-    return sum;
-}
-
-
-function uno() {
-    var matrix = [
-        [0, 1, 1, 2],
-        [0, 5, 0, 0],
-        [2, 0, 3, 3]
-    ];
-    var sum = 0;
-    for (var i = 0; i < 3; i++) {
-        for (var j = 0; j < 4; j++) {
-            sum += matrix[i][j];
-        }
-    }
-    return sum;
-}
+// console.log(exerciseElaboration(1, 2));
